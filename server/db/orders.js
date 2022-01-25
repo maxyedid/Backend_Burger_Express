@@ -6,6 +6,7 @@ const db = require('./database')
 //Has an orderId, customer associated to it,
 //and many food items that were put into it
 
+//todo foreign keys
 
 const Order = db.define('orders', {
     orderId: {
