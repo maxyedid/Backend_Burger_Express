@@ -5,6 +5,8 @@ const db = require('./database')
 
 // Has an id, firstName, lastName, email, phone #, and pastOrders
 
+//todo foreign keys
+
 const Customer = db.define('customer', {
     cid: {
         type: Sequelize.INTEGER,

@@ -5,18 +5,16 @@ const db = require('./database')
 
 // has a foodId, short description, category, name, price, and imageURL
 
-const Food = db.define('menuItem', {
-    foodId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        foreignKey: true
-    },
+//todo foreign keys
+
+
+const Item = db.define('menuItem', {
     name: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(30),
         allowNull: false
     },
     type: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING(30),
         allowNull: false
     },
     description: {
@@ -28,7 +26,7 @@ const Food = db.define('menuItem', {
         allowNull: false
     },
     imageURL: {
-        type: Sequelize.TEXT,
+        type: Sequelize.TEXT('long'),
         allowNull: true,
         validate: {
             isURL: true
@@ -36,4 +34,4 @@ const Food = db.define('menuItem', {
     }
 })
 
-module.exports = Food;
+module.exports = Item;
