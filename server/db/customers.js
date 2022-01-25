@@ -6,7 +6,7 @@ const db = require('./database')
 // Has an id, firstName, lastName, email, phone #, and pastOrders
 
 const Customer = db.define('customer', {
-    id: {
+    cid: {
         type: Sequelize.INTEGER,
         primaryKey: true,
         allowNull: false
@@ -29,9 +29,7 @@ const Customer = db.define('customer', {
     phoneNumber: {
         type: Sequelize.STRING(14),
         allowNull: false
-    },
-    pastOrders: {
-        type: Sequelize.ARRAY(Sequelize.INTEGER),
-        allowNull: true
     }
 })
+
+module.exports = Customer;
