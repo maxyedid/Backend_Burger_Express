@@ -23,7 +23,7 @@ db.sync({force: true}).then(() => {
     FoodItem.create({name: "Coca Cola", type: "drink", price: 2.00})
     FoodItem.create({name: "Pudding", description: "Vanilla pudding a small cup", type: "dessert", price: 4.00})
 
-    app.listen(PORT, () => {
+    app.listen(process.env.PORT || PORT, () => {
         console.log("Connection Terminated, im sorry to interrupt you Elizabeth");
     })
 })
