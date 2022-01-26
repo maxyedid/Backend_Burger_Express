@@ -26,12 +26,13 @@ const Item = db.define('menuItem', {
         allowNull: false
     },
     imageURL: {
-        type: Sequelize.TEXT('long'),
+        type: Sequelize.TEXT,
         allowNull: true,
         validate: {
             isURL: true
         }
     }
 })
+
 
 module.exports = Item;
