@@ -6,7 +6,6 @@ const Orders = require('./orders')
 //needs to have associations
 
 
-
 module.exports = {
     db,
     Menu,

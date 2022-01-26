@@ -24,6 +24,7 @@ const Customer = db.define('customer', {
     email: {
         type: Sequelize.TEXT,
         allowNull: false,
+        unique: true,
         validate: {
             isEmail: true
         }
