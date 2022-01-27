@@ -16,7 +16,6 @@ app.use(express.urlencoded({extended: true}))
 
 app.use('/api', require('./api/index'))
 
-
 db.sync().then(async () => {
     console.log('db synced')    
     app.listen(process.env.PORT || PORT, () => {
