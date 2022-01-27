@@ -8,17 +8,16 @@ const db = require('./database')
 //todo foreign keys
 
 const Customer = db.define('customer', {
-    cid: {
-        type: Sequelize.INTEGER,
-        primaryKey: true,
-        allowNull: false
-    },
     firstName: {
         type: Sequelize.STRING(30),
         allowNull: false
     },
     lastName: {
         type: Sequelize.STRING(30),
+        allowNull: false
+    },
+    phoneNumber: {
+        type: Sequelize.STRING(14),
         allowNull: false
     },
     email: {
@@ -29,8 +28,8 @@ const Customer = db.define('customer', {
             isEmail: true
         }
     },
-    phoneNumber: {
-        type: Sequelize.STRING(14),
+    password: {
+        type: Sequelize.STRING(30),
         allowNull: false
     }
 })
