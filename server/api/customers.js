@@ -1,6 +1,27 @@
 const router = require('express').Router()
 const Customer = require('../db/customers')
 
+const isLoggedIn = async (req, res, next) => {
+    try {
+      console.log('IN GATEKEEPING');
+      const user = await Customer.findOne({
+        where: {
+          email: req.body.email
+        },
+      });
+      if (user) {
+        console.log("Logged in")
+        next()
+      } else {
+        return res.status(404).send('Please log in!');
+      }
+    } catch (error) {
+      console.log(error.message)
+      next(error);
+    }
+  };
+  
+
 router.get('/:id', async (req, res) => {
     try {
         const customer = await Customer.findOne({where: {id: req.params.id}})
@@ -10,15 +31,18 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.post('/login', async (req, res) => {
-    
+router.post('/login', isLoggedIn, async (req, res) => {
         const customer = await Customer.findOne({where: {email: req.body.email}})
         if (!customer) {
-            res.status(401).send("Email/Password is incorrect")
+            res.status(404).send("Email/Password is incorrect")
         } else if (customer.password != req.body.password) {
-            res.status(401).send("Email/Password is incorrect")
+            res.status(404).send("Email/Password is incorrect")
+        } else {
+            res.status(202).send("Logged in")
         }
 })
+
+
 
 router.post('/register', async(req, res) => {
     try {
@@ -26,7 +50,7 @@ router.post('/register', async(req, res) => {
     res.status(200).send(newCustomer)
     } catch (error) {
         if (error.name === "SequelizeUniqueConstraintError") {
-            res.status(401).send("Email already exists")
+            res.status(404).send("Email already exists")
         } else {
             res.status(404).send("Fill out all the fields")
         }
