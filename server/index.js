@@ -3,6 +3,7 @@ const morgan = require('morgan')
 const cors = require('cors')
 const {db} = require('./db')
 const FoodItem = require('./db/menuItems')
+const Customer = require('./db/customers')
 
 const app = express()
 const PORT = 3000
@@ -23,7 +24,11 @@ db.sync({force: true}).then(() => {
     FoodItem.create({name: "Coca Cola", type: "drink", price: 2.00, imageURL: "https://media.istockphoto.com/photos/classic-cocacola-can-picture-id465133878?k=20&m=465133878&s=612x612&w=0&h=vgcvEz4ts5WZQOhKMaKon8mIQVbr20-JhP7DKgo_wD0="})
     FoodItem.create({name: "Pudding", description: "Vanilla pudding in a small cup", type: "dessert", price: 4.00, imageURL: "https://www.mybakingaddiction.com/wp-content/uploads/2021/03/vanilla-pudding-with-fruit-720x1080.jpg.webp"})
 
+
+    Customer.create({firstName: "John", lastName: "Doe", email: "johndoe@gmail.com", phoneNumber: "555-555-5555", password: "abc123"})
+    Customer.create({firstName: "Jane", lastName: "Doe", email: "janedoe@gmail.com", phoneNumber: "444-444-4444", password: "abc123"})
+
     app.listen(process.env.PORT || PORT, () => {
-        console.log("Connection Terminated, im sorry to interrupt you Elizabeth");
+        console.log("Connection Terminated");
     })
 })

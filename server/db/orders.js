@@ -9,17 +9,9 @@ const db = require('./database')
 //todo foreign keys
 
 const Order = db.define('orders', {
-    orderId: {
-        type: Sequelize.INTEGER,
+    status: {
+        type: Sequelize.STRING,
         allowNull: false
-    },
-    customerId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-    },
-    foodItemId: {
-        type: Sequelize.INTEGER,
-        allowNull: true
     }
 })
 
