@@ -3,7 +3,7 @@ const Customer = require('../db/customers')
 
 router.get('/:id', async (req, res) => {
     try {
-        const customer = await Customer.findByPk(req.body)
+        const customer = await Customer.findOne({where: {id: req.params.id}})
         res.status(202).send(customer)
     } catch (error) {
         res.status(404).send("Customer does not exist")
@@ -11,7 +11,7 @@ router.get('/:id', async (req, res) => {
 })
 
 router.post('/login', async (req, res) => {
-
+    
         const customer = await Customer.findOne({where: {email: req.body.email}})
         if (!customer) {
             res.status(401).send("Email/Password is incorrect")
