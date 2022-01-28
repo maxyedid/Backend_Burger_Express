@@ -10,12 +10,4 @@ router.get('/', async (req, res) => {
     }
 })
 
-router.post('/', async (req, res) => {
-    try {
-       const newItem = Item.create(req.body)
-        res.status(201).send(newItem)
-    } catch (error) {
-        res.status(404).send(error.message)
-    }
-})
 module.exports = router

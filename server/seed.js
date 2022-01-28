@@ -19,12 +19,22 @@ async function seed() {
         await FoodItem.create({name: "Sprite", type: "drink", price: 2.00, imageURL: "https://az651873.vo.msecnd.net/img/prods/large/1010041933.jpg" })
         await FoodItem.create({name: "Dr Pepper", type: "drink", price: 2.00, imageURL: "https://www.myamericanmarket.com/31036/dr-pepper-soda.jpg"})
         await FoodItem.create({name:"Lemon Snapple" , type: "drink", price: 2.50, imageURL: "https://m.media-amazon.com/images/I/61owPAJuWmL._SL1500_.jpg"})
+        await FoodItem.create({name: "Onion Rings", type: "appetizer", price: 5.00, imageURL: "https://www.mylatinatable.com/wp-content/uploads/2016/01/foto-heroe-1024x693-1-1024x693.jpg"})
+        await FoodItem.create({name: "Water", type: "drink", price: 2.00, imageURL: "https://www.dasani.com/content/dam/nagbrands/us/dasani/en/products/water/Dasani_20oz_wet.png"})
+        await FoodItem.create({name: "Ice Cream Sundae", type: "dessert", price: 4.00, imageURL: "https://assets.rbl.ms/21919567/origin.jpg"})
+        await FoodItem.create({name: "Chicken Burger", type: "entree", price: 11.00, imageURL: "https://flaevor.com/wp-content/uploads/2020/09/SambalFriedChickenBurgerRecipe.jpg"})
+        await FoodItem.create({name: "Grilled Chicken Salad", type: "entree", price: 7.00, imageURL: "https://www.eatwell101.com/wp-content/uploads/2019/04/Blackened-Chicken-and-Avocado-Salad-recipe-1.jpg"})
+        await FoodItem.create({name: "Brownie", type: "dessert", price: 1.50, description: "3 Pieces", imageURL: "https://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg"})
+        await FoodItem.create({name: "Minute Made Lemonade", type: "drink", price: 2.00, imageURL: "https://www.kroger.com/product/images/large/front/0002500005801"})
+        await FoodItem.create({name: "Tuna Wrap", type: "entree", price: 7.00, imageURL: "https://californiaavocado.com/wp-content/uploads/2020/07/California-Tuna-Salad-Wrap.jpeg"})
+        await FoodItem.create({name: "Pastrami Burger", type: "entree", description: "Beef Burger with 2 slices of pastrami", price: 15.00, imageURL: "https://www.derrickriches.com/wp-content/uploads/2020/01/pastrami-burger-scaled-e1627402127745.jpg"})
+        await FoodItem.create({name: "Sweet Potato Fries", type: "appetizer", price: 3.50, imageURL: "https://www.cookingclassy.com/wp-content/uploads/2021/10/baked-sweet-potato-fries-12.jpg"})
 
 
         await Customer.create({firstName: "John", lastName: "Doe", email: "johndoe@gmail.com", phoneNumber: "555-555-5555", password: "abc123"})
         await Customer.create({firstName: "Jane", lastName: "Doe", email: "janedoe@gmail.com", phoneNumber: "444-444-4444", password: "abc123"})
     
-        const fakeOrder = await Orders.create({status: "in cart"})
+        const fakeOrder = await Orders.create({status: "Pending"})
         await fakeOrder.setCustomer(1)
         await fakeOrder.setMenuItems([1, 2, 3])
         console.log(fakeOrder)
