@@ -1,9 +1,10 @@
 const router = require('express').Router()
 const Order = require('../db/orders')
+const MenuItems = require('../db/menuItems')
 
 router.get("/allOrders", async (req, res) => {
     try {
-        const orders = await Order.findAll()
+        const orders = await Order.findAll({include: MenuItems})
         res.status(200).send(orders)
     } catch (error) {
         res.status(404).send(error)
@@ -12,21 +13,24 @@ router.get("/allOrders", async (req, res) => {
 
 router.post("/newOrder", async (req, res) => {
     try {
-        const newOrder = await order.create(req.body)
-        res.status.send(newOrder)
+        const newOrder = await Order.create(req.body.order)
+        await newOrder.setCustomer(req.body.customerId)
+        await newOrder.setMenuItems(req.body.items)
+        res.status(202).send(newOrder)
     } catch (error) {
         res.status(404).send("Order cannot be created")
     }
 })
 
-router.get("/pastOrders", async (req, res) => {
+router.get("/pastOrders/:id", async (req, res) => {
     try {
-        const pastOrders = await order.findAll({where: {customerId : req.body.customerId}});
+        const pastOrders = await Order.findAll({where: {customerId : req.params.id}, include: MenuItems});
         res.status(200).send(pastOrders)
     } catch (error) {
         res.status(404).send("No orders can be found for this customer")
     }
 })
+
 
 
 
