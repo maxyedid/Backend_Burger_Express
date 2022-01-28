@@ -34,9 +34,9 @@ async function seed() {
         await Customer.create({firstName: "John", lastName: "Doe", email: "johndoe@gmail.com", phoneNumber: "555-555-5555", password: "abc123"})
         await Customer.create({firstName: "Jane", lastName: "Doe", email: "janedoe@gmail.com", phoneNumber: "444-444-4444", password: "abc123"})
     
-        const fakeOrder = await Orders.create({status: "in cart"})
+        const fakeOrder = await Orders.create({status: "Pending"})
         await fakeOrder.setCustomer(1)
-        await fakeOrder.setMenuItems([1, 2, 1])
+        await fakeOrder.setMenuItems([1, 2, 3])
         console.log(fakeOrder)
     }
 
