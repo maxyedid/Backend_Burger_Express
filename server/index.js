@@ -7,7 +7,7 @@ const Customer = require('./db/customers')
 const Orders = require('./db/orders')
 
 const app = express()
-const PORT = 3000
+const PORT = 5000
 
 app.use(cors())
 app.use(morgan('dev'))
