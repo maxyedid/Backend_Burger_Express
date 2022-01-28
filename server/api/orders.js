@@ -13,7 +13,9 @@ router.get("/allOrders", async (req, res) => {
 
 router.post("/newOrder", async (req, res) => {
     try {
-        const newOrder = await Order.create(req.body)
+        const newOrder = await Order.create(req.body.order)
+        await newOrder.setCustomer(req.body.customerId)
+        await newOrder.setMenuItems(req.body.items)
         res.status(202).send(newOrder)
     } catch (error) {
         res.status(404).send("Order cannot be created")
