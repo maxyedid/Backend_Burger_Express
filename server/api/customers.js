@@ -38,7 +38,7 @@ router.post('/login', isLoggedIn, async (req, res) => {
         } else if (customer.password != req.body.password) {
             res.status(404).send("Email/Password is incorrect")
         } else {
-            res.status(202).send("Logged in")
+            res.status(202).send(customer)
         }
 })
 
