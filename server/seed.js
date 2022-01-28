@@ -16,9 +16,9 @@ async function seed() {
         await FoodItem.create({name: "Pudding", description: "Vanilla pudding in a small cup", type: "dessert", price: 4.00, imageURL: "https://www.mybakingaddiction.com/wp-content/uploads/2021/03/vanilla-pudding-with-fruit-720x1080.jpg.webp"})
         await FoodItem.create({name: "Chicken Nuggets", type: "appeitzer", description: "10 Pc.", price: 4.50, imageURL: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Chicken_Nuggets.jpg/220px-Chicken_Nuggets.jpg"})
         await FoodItem.create({name: "Diet Coke", type: "drink", price: 2.00, imageURL: "https://i5.walmartimages.com/asr/96a7eb7c-ed6e-4fe2-bbda-a6dd8a8662eb.21f29b327f0c10681687206344be4bd3.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF"})
-        await FoodItem.create({name: "Sprite", type: "drink", price: 2.00, imageUrl: "https://az651873.vo.msecnd.net/img/prods/large/1010041933.jpg" })
-        await FoodItem.create({name: "Dr Pepper", type: "drink", price: 2.00, imageUrl: "https://www.myamericanmarket.com/31036/dr-pepper-soda.jpg"})
-        await FoodItem.create({name:"Lemon Snapple" , type: "drink", price: 2.50, imageUrl: "https://m.media-amazon.com/images/I/61owPAJuWmL._SL1500_.jpg"})
+        await FoodItem.create({name: "Sprite", type: "drink", price: 2.00, imageURL: "https://az651873.vo.msecnd.net/img/prods/large/1010041933.jpg" })
+        await FoodItem.create({name: "Dr Pepper", type: "drink", price: 2.00, imageURL: "https://www.myamericanmarket.com/31036/dr-pepper-soda.jpg"})
+        await FoodItem.create({name:"Lemon Snapple" , type: "drink", price: 2.50, imageURL: "https://m.media-amazon.com/images/I/61owPAJuWmL._SL1500_.jpg"})
 
 
         await Customer.create({firstName: "John", lastName: "Doe", email: "johndoe@gmail.com", phoneNumber: "555-555-5555", password: "abc123"})
