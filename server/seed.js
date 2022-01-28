@@ -30,6 +30,7 @@ async function seed() {
         await FoodItem.create({name: "Pastrami Burger", type: "entree", description: "Beef Burger with 2 slices of pastrami", price: 15.00, imageURL: "https://www.derrickriches.com/wp-content/uploads/2020/01/pastrami-burger-scaled-e1627402127745.jpg"})
         await FoodItem.create({name: "Sweet Potato Fries", type: "appetizer", price: 3.50, imageURL: "https://www.cookingclassy.com/wp-content/uploads/2021/10/baked-sweet-potato-fries-12.jpg"})
 
+
         await Customer.create({firstName: "John", lastName: "Doe", email: "johndoe@gmail.com", phoneNumber: "555-555-5555", password: "abc123"})
         await Customer.create({firstName: "Jane", lastName: "Doe", email: "janedoe@gmail.com", phoneNumber: "444-444-4444", password: "abc123"})
     
