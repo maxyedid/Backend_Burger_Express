@@ -20,6 +20,7 @@ async function seed() {
         await FoodItem.create({name: "Dr Pepper", type: "drink", price: 2.00, imageUrl: "https://www.myamericanmarket.com/31036/dr-pepper-soda.jpg"})
         await FoodItem.create({name:"Lemon Snapple" , type: "drink", price: 2.50, imageUrl: "https://m.media-amazon.com/images/I/61owPAJuWmL._SL1500_.jpg"})
 
+
         await Customer.create({firstName: "John", lastName: "Doe", email: "johndoe@gmail.com", phoneNumber: "555-555-5555", password: "abc123"})
         await Customer.create({firstName: "Jane", lastName: "Doe", email: "janedoe@gmail.com", phoneNumber: "444-444-4444", password: "abc123"})
     
