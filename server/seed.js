@@ -27,7 +27,7 @@ async function seed() {
         await FoodItem.create({name: "Brownie", type: "dessert", price: 1.50, description: "3 Pieces", imageURL: "https://www.inspiredtaste.net/wp-content/uploads/2016/06/Brownies-Recipe-2-1200.jpg"})
         await FoodItem.create({name: "Minute Made Lemonade", type: "drink", price: 2.00, imageURL: "https://www.kroger.com/product/images/large/front/0002500005801"})
         await FoodItem.create({name: "Tuna Wrap", type: "entree", price: 7.00, imageURL: "https://californiaavocado.com/wp-content/uploads/2020/07/California-Tuna-Salad-Wrap.jpeg"})
-        await FoodItem.create({name: "Pastrami Burger", type: "entree", description: "Beef Burger with 2 slices of pastrami", price: 15.00, imageURL: "https://www.derrickriches.com/wp-content/uploads/2020/01/pastrami-burger-scaled-e1627402127745.jpg"})
+        await FoodItem.create({name: "Pastrami Burger", type: "entree", description: "Beef Burger with 2 slices of pastrami", price: 15.00, imageURL: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR93RicHqeYcmUwB_hYjmfY04R4fNhUKO7dvg&usqp=CAU"})
         await FoodItem.create({name: "Sweet Potato Fries", type: "appetizer", price: 3.50, imageURL: "https://www.cookingclassy.com/wp-content/uploads/2021/10/baked-sweet-potato-fries-12.jpg"})
 
 
