@@ -53,5 +53,5 @@ async function seed() {
           console.log('db connection closed');
         }
       }    
-      runSeed()
+     await runSeed()
       
